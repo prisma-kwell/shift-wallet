@@ -106,7 +106,7 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
     ];
 
     $scope.getPriceTicker = function () {
-        $http.get("https://explorer.lisk.io/api/getPriceTicker")
+        $http.get("https://explorer.shiftnrg.org/api/getPriceTicker")
             .then(function (response) {
                 $scope.btc_usd = response.data.btc_usd;
                 $scope.lisk_btc = response.data.lisk_btc;
@@ -118,7 +118,7 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
         $http.get("/api/peers/version").then(function (response) {
             if (response.data.success) {
                 $scope.version = response.data.version;
-                $http.get("https://login.lisk.io/api/peers/version").then(function (response) {
+                $http.get("https://wallet.shiftnrg.org/api/peers/version").then(function (response) {
                     $scope.latest = response.data.version;
                     $scope.diffVersion = compareVersion($scope.version, $scope.latest);
                 });
@@ -129,8 +129,8 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
         });
     };
 
-    $scope.convertToUSD = function (lisk) {
-        return (lisk / 100000000) * $scope.lisk_usd;
+    $scope.convertToUSD = function (shift) {
+        return (shift / 100000000) * $scope.lisk_usd;
     };
 
     $scope.clearSearch = function () {

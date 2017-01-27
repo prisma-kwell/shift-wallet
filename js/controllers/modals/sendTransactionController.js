@@ -107,7 +107,7 @@ angular.module('liskApp').controller('sendTransactionController', ['$scope', 'se
             return;
         }
 
-        if (string[string.length - 1] == 'L') {
+        if (string[string.length - 1] == 'S') {
             var isnum = /^\d+$/.test(string.substring(0, string.length - 1));
             if (isnum && string.length - 1 >= 1 && string.length - 1 <= 20) {
                 $scope.accountValid = true;
@@ -212,10 +212,10 @@ angular.module('liskApp').controller('sendTransactionController', ['$scope', 'se
             amount: $scope.convertSHIFT($scope.amount),
             recipientId: $scope.to
         };
-
-	if (userService.publicKey) {
-	    data.publicKey = userService.publicKey;
-	}
+		
+		if (userService.publicKey) {
+			data.publicKey = userService.publicKey;
+		}		
 
         if ($scope.secondPassphrase) {
             data.secondSecret = $scope.secondPhrase;

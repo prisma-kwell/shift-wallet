@@ -1,29 +1,37 @@
-# SHIFT UI
+# Shift UI
 
-This repository contains the [AngularJS](https://angularjs.org/) based user-interface submodule of the SHIFT client.
+Shift is a next generation crypto-currency and blockchain application platform, written entirely in JavaScript. For more information please refer to our website: https://shiftnrg.org/.
+
+This repository contains the [AngularJS](https://angularjs.org/) based user-interface submodule of the Shift client.
 
 ## Installation
 
-Install node modules:
+Install frontend dependencies (will run the `bower install` after the npm instalation):
 
 ```
 npm install
 ```
 
-Install bower components:
+Install bower components (optional and already happening in `npm install`):
 
 ```
-bower install
+npm run bower-install
 ```
 
 Build the user-interface:
 
 ```
-grunt release
+npm run grunt-release
 ```
 
+You can set the following cookies (e.g. using [EditThisCookies](http://www.editthiscookie.com/)) for more comfortable local development:
+- `passphrase` - passphrase to sign you in  
+- `goto` - name of state to go to. See [possible state names](https://github.com/shifnrg/lisk-ui/blob/development/js/app.js#L25-L100).
+
+
 ## Authors
-- Crush - ShiftTeam <shiftcurrency@gmail.com>
+
+- Ralf S <ralfs@shiftnrg.org>
 - Vera Nekrasova <vera.limita@gmail.com>
 - Boris Povod <boris@crypti.me>
 - Oliver Beddows <oliver@lisk.io>
@@ -33,8 +41,8 @@ grunt release
 
 The MIT License (MIT)  
 
-Copyright (c) 2016 Shift
-Copyright (c) 2016 Shift  
+Copyright (c) 2017 Shift  
+Copyright (c) 2016 Lisk  
 Copyright (c) 2014-2015 Crypti  
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:  

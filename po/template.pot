@@ -58,10 +58,10 @@ msgstr ""
 msgid "Applications"
 msgstr ""
 
-#: js/controllers/delegatesController.js:160
+#: js/controllers/delegatesController.js:193
 #: js/controllers/forgingController.js:64
 #: js/controllers/votedDelegatesController.js:119
-#: partials/forging.html:45
+#: partials/forging.html:69
 msgid "Approval"
 msgstr ""
 
@@ -78,12 +78,11 @@ msgid "Becoming a delegate requires registration. You may choose your own delega
 msgstr ""
 
 #: partials/modals/blockInfo.html:7
-#: partials/modals/transactionInfo.html:4
 msgid "Block"
 msgstr ""
 
 #: js/controllers/blockchainController.js:41
-#: js/controllers/forgingController.js:115
+#: js/controllers/forgingController.js:117
 #: partials/modals/transactionInfo.html:35
 msgid "Block ID"
 msgstr ""
@@ -232,8 +231,9 @@ msgstr ""
 msgid "Copied!"
 msgstr ""
 
-#: partials/delegates.html:127
-#: partials/delegates.html:58
+#: partials/delegates.html:121
+#: partials/delegates.html:190
+#: partials/delegates.html:52
 #: partials/modals/userInfo.html:22
 #: partials/votes.html:56
 msgid "Copy Address"
@@ -244,8 +244,9 @@ msgstr ""
 msgid "Copy Block ID"
 msgstr ""
 
-#: partials/delegates.html:130
-#: partials/delegates.html:61
+#: partials/delegates.html:124
+#: partials/delegates.html:193
+#: partials/delegates.html:55
 #: partials/votes.html:59
 msgid "Copy Name"
 msgstr ""
@@ -332,7 +333,7 @@ msgid "Failed to uninstall application"
 msgstr ""
 
 #: js/controllers/blockchainController.js:46
-#: js/controllers/forgingController.js:117
+#: js/controllers/forgingController.js:119
 #: js/controllers/transactionsController.js:67
 #: js/controllers/walletPendingsController.js:48
 #: js/controllers/walletTransactionsController.js:71
@@ -350,7 +351,7 @@ msgstr ""
 msgid "Fee: {{fee | liskFilter}} SHIFT"
 msgstr ""
 
-#: partials/forging.html:74
+#: partials/forging.html:99
 msgid "Forged Blocks"
 msgstr ""
 
@@ -411,7 +412,7 @@ msgid "HOME"
 msgstr ""
 
 #: js/controllers/blockchainController.js:40
-#: js/controllers/forgingController.js:114
+#: js/controllers/forgingController.js:116
 #: js/controllers/transactionsController.js:61
 #: js/controllers/walletTransactionsController.js:66
 #: partials/modals/blockInfo.html:26
@@ -438,16 +439,20 @@ msgstr ""
 msgid "LAUNCH"
 msgstr ""
 
-#: partials/modals/sendTransaction.html:29
-msgid "SHIFT Amount"
-msgstr ""
-
-#: partials/forging.html:11
-msgid "SHIFT Earned"
-msgstr ""
-
 #: partials/settings.html:9
 msgid "Language"
+msgstr ""
+
+#: partials/forging.html:30
+msgid "Last 24 hours"
+msgstr ""
+
+#: partials/forging.html:42
+msgid "Last 30 days"
+msgstr ""
+
+#: partials/forging.html:36
+msgid "Last 7 days"
 msgstr ""
 
 #: partials/blockchain.html:7
@@ -465,25 +470,6 @@ msgstr ""
 
 #: partials/account.html:36
 msgid "Latest version"
-msgstr ""
-
-#: wallet.html:22
-msgid "Shift - Blockchain Application Platform"
-msgstr ""
-
-#: js/controllers/delegatesController.js:158
-#: js/controllers/votedDelegatesController.js:117
-#: js/controllers/walletPendingsController.js:43
-#: partials/modals/multisignatureModal.html:52
-msgid "Shift Address"
-msgstr ""
-
-#: partials/account.html:33
-msgid "Shift Client"
-msgstr ""
-
-#: partials/account.html:43
-msgid "Shift Client Outdated"
 msgstr ""
 
 #: js/controllers/walletsController.js:7
@@ -519,8 +505,9 @@ msgid "Loading transactions"
 msgstr ""
 
 #: partials/blockchain.html:40
-#: partials/delegates.html:150
-#: partials/delegates.html:81
+#: partials/delegates.html:144
+#: partials/delegates.html:213
+#: partials/delegates.html:75
 msgid "Loading..."
 msgstr ""
 
@@ -614,7 +601,8 @@ msgstr ""
 msgid "NO"
 msgstr ""
 
-#: js/controllers/delegatesController.js:157
+#: js/controllers/delegatesController.js:148
+#: js/controllers/delegatesController.js:190
 #: js/controllers/votedDelegatesController.js:116
 msgid "Name"
 msgstr ""
@@ -633,9 +621,13 @@ msgstr ""
 msgid "No blockchain"
 msgstr ""
 
-#: partials/delegates.html:145
-#: partials/delegates.html:76
+#: partials/delegates.html:139
+#: partials/delegates.html:208
 msgid "No delegates"
+msgstr ""
+
+#: partials/delegates.html:70
+msgid "No delegates found"
 msgstr ""
 
 #: partials/blockchain.html:47
@@ -771,7 +763,7 @@ msgstr ""
 msgid "Primary Passphrase"
 msgstr ""
 
-#: partials/forging.html:35
+#: partials/forging.html:59
 msgid "Productivity"
 msgstr ""
 
@@ -783,10 +775,10 @@ msgstr ""
 msgid "REMOVE VOTE"
 msgstr ""
 
-#: js/controllers/delegatesController.js:156
+#: js/controllers/delegatesController.js:189
 #: js/controllers/forgingController.js:41
 #: js/controllers/votedDelegatesController.js:115
-#: partials/forging.html:26
+#: partials/forging.html:50
 msgid "Rank"
 msgstr ""
 
@@ -823,7 +815,7 @@ msgid "Removing vote from delegates"
 msgstr ""
 
 #: js/controllers/blockchainController.js:47
-#: js/controllers/forgingController.js:118
+#: js/controllers/forgingController.js:120
 #: partials/modals/blockInfo.html:29
 msgid "Reward"
 msgstr ""
@@ -835,6 +827,14 @@ msgstr ""
 
 #: partials/template.html:149
 msgid "SEND"
+msgstr ""
+
+#: partials/modals/sendTransaction.html:29
+msgid "SHIFT Amount"
+msgstr ""
+
+#: partials/forging.html:11
+msgid "SHIFT Earned"
 msgstr ""
 
 #: partials/passphrase.html:27
@@ -850,6 +850,10 @@ msgstr ""
 
 #: js/controllers/modals/addDappModalController.js:8
 msgid "Saving new application"
+msgstr ""
+
+#: partials/delegates.html:25
+msgid "Search Delegates"
 msgstr ""
 
 #: partials/template.html:308
@@ -873,8 +877,9 @@ msgstr ""
 msgid "Security Warning"
 msgstr ""
 
-#: partials/delegates.html:120
-#: partials/delegates.html:51
+#: partials/delegates.html:114
+#: partials/delegates.html:183
+#: partials/delegates.html:45
 #: partials/modals/sendTransaction.html:13
 #: partials/modals/userInfo.html:28
 #: partials/votes.html:49
@@ -891,14 +896,34 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
+#: wallet.html:22
+msgid "Shift - Blockchain Application Platform"
+msgstr ""
+
+#: js/controllers/delegatesController.js:149
+#: js/controllers/delegatesController.js:191
+#: js/controllers/votedDelegatesController.js:117
+#: js/controllers/walletPendingsController.js:43
+#: partials/modals/multisignatureModal.html:52
+msgid "Shift Address"
+msgstr ""
+
+#: partials/account.html:33
+msgid "Shift Client"
+msgstr ""
+
+#: partials/account.html:43
+msgid "Shift Client Outdated"
+msgstr ""
+
 #: partials/blockchain.html:17
-#: partials/forging.html:82
+#: partials/forging.html:107
 #: partials/transactions.html:16
 msgid "Show All Columns"
 msgstr ""
 
 #: partials/blockchain.html:18
-#: partials/forging.html:85
+#: partials/forging.html:110
 #: partials/transactions.html:19
 msgid "Show Full Time"
 msgstr ""
@@ -907,7 +932,7 @@ msgstr ""
 msgid "Sign"
 msgstr ""
 
-#: partials/delegates.html:92
+#: partials/delegates.html:155
 msgid "Standby Delegates"
 msgstr ""
 
@@ -982,7 +1007,7 @@ msgid "This walkthrough will guide you through the necessary steps to create a m
 msgstr ""
 
 #: js/controllers/blockchainController.js:43
-#: js/controllers/forgingController.js:116
+#: js/controllers/forgingController.js:118
 #: js/controllers/transactionsController.js:65
 #: js/controllers/walletPendingsController.js:46
 #: js/controllers/walletTransactionsController.js:69
@@ -998,11 +1023,15 @@ msgstr ""
 msgid "To become a delegate, click on the \"Delegate Registration\" button."
 msgstr ""
 
+#: partials/forging.html:24
+msgid "Today"
+msgstr ""
+
 #: partials/template.html:130
 msgid "Toggle navigation"
 msgstr ""
 
-#: partials/delegates.html:23
+#: partials/delegates.html:86
 msgid "Top Delegates"
 msgstr ""
 
@@ -1020,6 +1049,10 @@ msgstr ""
 
 #: js/controllers/forgingController.js:26
 msgid "Total Forged"
+msgstr ""
+
+#: partials/modals/transactionInfo.html:4
+msgid "Transaction"
 msgstr ""
 
 #: js/controllers/transactionsController.js:62
@@ -1058,7 +1091,7 @@ msgstr ""
 msgid "USD Equivalent"
 msgstr ""
 
-#: js/controllers/delegatesController.js:159
+#: js/controllers/delegatesController.js:192
 #: js/controllers/forgingController.js:53
 #: js/controllers/votedDelegatesController.js:118
 msgid "Uptime"
@@ -1098,7 +1131,7 @@ msgstr ""
 msgid "You do not have any applications installed yet."
 msgstr ""
 
-#: partials/forging.html:106
+#: partials/forging.html:131
 msgid "You have not forged any blocks yet."
 msgstr ""
 
@@ -1164,18 +1197,18 @@ msgstr ""
 #: partials/modals/sendTransaction.html:119
 #: partials/modals/sendTransaction.html:49
 #: partials/modals/sendTransaction.html:84
-msgid "send lisk"
+msgid "send shift"
 msgstr ""
 
 #: partials/delegates.html:13
 msgid "vote"
 msgstr ""
 
-#: partials/delegates.html:93
+#: partials/delegates.html:156
 msgid "{{countStandby}} in Total"
 msgstr ""
 
-#: partials/delegates.html:24
+#: partials/delegates.html:87
 msgid "{{countTop}} in Total"
 msgstr ""
 

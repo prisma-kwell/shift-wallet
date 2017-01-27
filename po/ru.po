@@ -891,7 +891,7 @@ msgstr "ОТПРАВИТЬ"
 #: partials/modals/sendTransaction.html:119
 #: partials/modals/sendTransaction.html:49
 #: partials/modals/sendTransaction.html:84
-msgid "send lisk"
+msgid "send SHIFT"
 msgstr "отправить SHIFT"
 
 #: partials/delegates.html:120 partials/delegates.html:51

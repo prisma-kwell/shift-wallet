@@ -1110,8 +1110,8 @@ msgstr "revoca votul"
 #: partials/modals/sendTransaction.html:112
 #: partials/modals/sendTransaction.html:42
 #: partials/modals/sendTransaction.html:77
-msgid "send lisk"
-msgstr "trimite lisk"
+msgid "send SHIFT"
+msgstr "trimite SHIFT"
 
 #: partials/delegates.html:13
 msgid "vote"

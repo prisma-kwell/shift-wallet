@@ -95,7 +95,7 @@ angular.module('liskApp').controller('accountController', ['$state','$scope', '$
     }
 
     $scope.getCandles = function () {
-        $http.get("https://explorer.lisk.io/api/candles/getCandles").then(function (response) {
+        $http.get("https://explorer.shiftnrg.org/api/candles/getCandles").then(function (response) {
             $scope.graphs.liskPrice.data = [
                 response.data.candles.map(
                     function (candle) {

@@ -1205,8 +1205,8 @@ msgstr "supprimer le vote"
 #: partials/modals/sendTransaction.html:119
 #: partials/modals/sendTransaction.html:49
 #: partials/modals/sendTransaction.html:84
-msgid "send lisk"
-msgstr "envoyer lisk"
+msgid "send SHIFT"
+msgstr "envoyer SHIFT"
 
 #: partials/delegates.html:13
 msgid "vote"

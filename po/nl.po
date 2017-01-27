@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.11\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: partials/votes.html:25
@@ -29,10 +29,8 @@ msgid "{{voteList.length}} out of {{count}} Delegates selected"
 msgstr "{{voteList.length}} van de {{count}} Delegates geselecteerd"
 
 #: partials/delegates.html:4
-msgid ""
-"{{voteList.length}} out of {{countStandby + countTop}} Delegates selected"
-msgstr ""
-"{{voteList.length}} van de {{countStandby + countTop}} Delegates geselecteerd"
+msgid "{{voteList.length}} out of {{countStandby + countTop}} Delegates selected"
+msgstr "{{voteList.length}} van de {{countStandby + countTop}} Delegates geselecteerd"
 
 #: partials/template.html:162
 msgid "2nd Passphrase"
@@ -65,9 +63,7 @@ msgstr "Nieuwe applicatie toevoegen"
 
 #: partials/modals/multisignatureModal.html:46
 msgid "Add group members by typing in their Shift address and pressing enter."
-msgstr ""
-"Voeg groepsleden toe door hun Shift adres in te geven en door op enter te "
-"drukken."
+msgstr "Voeg groepsleden toe door hun Shift adres in te geven en door op enter te drukken."
 
 #: partials/modals/secondPassphraseModal.html:126
 msgid "ADD SECOND PASSPHRASE"
@@ -105,16 +101,8 @@ msgid "Balance"
 msgstr "Saldo"
 
 #: partials/modals/registrationDelegateModal.html:30
-msgid ""
-"Becoming a delegate requires registration. You may choose your own delegate "
-"name, which can be used to promote your delegate. Only the top 101 delegates "
-"are eligible to forge. All fees are shared equally between the top 101 "
-"delegates."
-msgstr ""
-"Om een Delegate te worden is een registratie vereist. Je mag je eigen "
-"Delegate naam kiezen, die kan worden gebruikt om je delegate te promoten. "
-"Enkel de top 101 Delegates zijn in staat te forgen. Alle fees worden "
-"gelijk verdeeld onder de 101 Delegates."
+msgid "Becoming a delegate requires registration. You may choose your own delegate name, which can be used to promote your delegate. Only the top 101 delegates are eligible to forge. All fees are shared equally between the top 101 delegates."
+msgstr "Om een Delegate te worden is een registratie vereist. Je mag je eigen Delegate naam kiezen, die kan worden gebruikt om je delegate te promoten. Enkel de top 101 Delegates zijn in staat te forgen. Alle fees worden gelijk verdeeld onder de 101 Delegates."
 
 #: js/controllers/blockchainController.js:41
 #: js/controllers/forgingController.js:115 partials/modals/blockInfo.html:7
@@ -356,13 +344,8 @@ msgid "FORGING"
 msgstr "FORGING"
 
 #: partials/modals/secondPassphraseModal.html:18
-msgid ""
-"Further protect your account with an optional second passphrase! It may take "
-"a few moments for the changes to take effect."
-msgstr ""
-"U kan uw account beter beveiligen door een tweede wachtwoordzin toe te "
-"voegen. Het kan enkele ogenblikken duren alvorens uw veranderingen zijn "
-"doorgevoerd."
+msgid "Further protect your account with an optional second passphrase! It may take a few moments for the changes to take effect."
+msgstr "U kan uw account beter beveiligen door een tweede wachtwoordzin toe te voegen. Het kan enkele ogenblikken duren alvorens uw veranderingen zijn doorgevoerd."
 
 #: partials/settings.html:6
 msgid "General"
@@ -411,12 +394,8 @@ msgid "HOME"
 msgstr "HOME"
 
 #: partials/modals/openDappModal.html:21
-msgid ""
-"If you are confident the application can be deemed trustworthy, click "
-"<strong>Open Anyway</strong>, otherwise click <strong>Cancel</strong> now."
-msgstr ""
-"Als u zeker weet dat de applicatie is te vertrouwen, klik dan op "
-"<strong>Toch Openen</strong>, anders klikt u op <strong>Annuleren</strong>."
+msgid "If you are confident the application can be deemed trustworthy, click <strong>Open Anyway</strong>, otherwise click <strong>Cancel</strong> now."
+msgstr "Als u zeker weet dat de applicatie is te vertrouwen, klik dan op <strong>Toch Openen</strong>, anders klikt u op <strong>Annuleren</strong>."
 
 #: partials/dapp-entry.html:20
 msgid "INSTALL"
@@ -514,55 +493,29 @@ msgstr "Laden..."
 msgid "Logout"
 msgstr "Afmelden"
 
-#: partials/modals/sendTransaction.html:29
-msgid "SHIFT Amount"
-msgstr "SHIFT Aantal"
-
 #: partials/forging.html:11
 msgid "SHIFT Earned"
 msgstr "SHIFT Verdiend"
 
 #: partials/modals/newUser.html:72
-msgid ""
-"Make sure that you keep the passphrase safe. If you lose your passphrase "
-"later on, your account can't be restored and all your funds will be lost."
-msgstr ""
-"Wees zeker dat u de wachtwoordzin veilig bewaard. Indien u uw wachtwoordzin "
-"verliest, kan uw account niet worden gebruikt en verliest u uw totale balans."
+msgid "Make sure that you keep the passphrase safe. If you lose your passphrase later on, your account can't be restored and all your funds will be lost."
+msgstr "Wees zeker dat u de wachtwoordzin veilig bewaard. Indien u uw wachtwoordzin verliest, kan uw account niet worden gebruikt en verliest u uw totale balans."
 
 #: partials/modals/newUser.html:31
-msgid ""
-"Make sure that you keep the passphrase safe. You will be asked to re-type it "
-"for confirmation."
-msgstr ""
-"Wees zeker dat u de wachtwoordzin veilig bewaard. U zal worden gevraagd om "
-"deze opnieuw te typen ter bevestiging."
+msgid "Make sure that you keep the passphrase safe. You will be asked to re-type it for confirmation."
+msgstr "Wees zeker dat u de wachtwoordzin veilig bewaard. U zal worden gevraagd om deze opnieuw te typen ter bevestiging."
 
 #: partials/modals/secondPassphraseModal.html:77
-msgid ""
-"Make sure that you keep the second passphrase safe. If you lose your second "
-"passphrase later on, your account can't be restored and all your funds will "
-"be lost."
-msgstr ""
-"Wees zeker dat u de tweede wachtwoordzin veilig bewaard. Indien u uw tweede "
-"wachtwoordzin verliest, kan uw account niet worden gebruikt en verliest u uw "
-"totale balans."
+msgid "Make sure that you keep the second passphrase safe. If you lose your second passphrase later on, your account can't be restored and all your funds will be lost."
+msgstr "Wees zeker dat u de tweede wachtwoordzin veilig bewaard. Indien u uw tweede wachtwoordzin verliest, kan uw account niet worden gebruikt en verliest u uw totale balans."
 
 #: partials/modals/secondPassphraseModal.html:35
-msgid ""
-"Make sure that you keep the second passphrase safe. You will be asked to re-"
-"type it for confirmation."
-msgstr ""
-"Wees zeker dat u de tweede wachtwoordzin veilig bewaard. U zal worden "
-"gevraagd om deze opnieuw te typen ter bevestiging."
+msgid "Make sure that you keep the second passphrase safe. You will be asked to re-type it for confirmation."
+msgstr "Wees zeker dat u de tweede wachtwoordzin veilig bewaard. U zal worden gevraagd om deze opnieuw te typen ter bevestiging."
 
 #: partials/modals/sendTransaction.html:41
-msgid ""
-"Make sure you're sending SHIFT to the right address. This action can't be "
-"undone later."
-msgstr ""
-"Wees zeker dat u de SHIFT naar het correcte adres verzendt. Deze actie kan "
-"niet ongedaan worden gemaakt."
+msgid "Make sure you're sending SHIFT to the right address. This action can't be undone later."
+msgstr "Wees zeker dat u de SHIFT naar het correcte adres verzendt. Deze actie kan niet ongedaan worden gemaakt."
 
 #: js/controllers/modals/masterPassphraseModalController.js:9
 msgid "Master Passphrase"
@@ -694,12 +647,8 @@ msgid "Pending transactions"
 msgstr "Transacties in afwachting"
 
 #: partials/modals/multisignatureModal.html:107
-msgid ""
-"Please check your input below and go back if necessary. Double-check the "
-"group members, else you risk losing your SHIFT balance!"
-msgstr ""
-"Controleer uw invoer hieronder en ga terug indien nodig. Controleer zeker de "
-"groepsleden, anders loopt u het risico uw volledige SHIFT balans te verliezen!"
+msgid "Please check your input below and go back if necessary. Double-check the group members, else you risk losing your SHIFT balance!"
+msgstr "Controleer uw invoer hieronder en ga terug indien nodig. Controleer zeker de groepsleden, anders loopt u het risico uw volledige SHIFT balans te verliezen!"
 
 #: partials/modals/registrationDelegateModal.html:15
 msgid "Please choose a delegate name."
@@ -710,24 +659,16 @@ msgid "Please confirm your selection and confirm your vote."
 msgstr "Bevestig alstublieft uw selectie en uw stem."
 
 #: partials/modals/addDappModal.html:111
-msgid ""
-"Please ensure all details are correct before confirming your blockchain "
-"application."
-msgstr ""
-"Wees alstublieft zeker dat alle details correct zijn voordat u uw blockchain "
-"applicatie bevestigd."
+msgid "Please ensure all details are correct before confirming your blockchain application."
+msgstr "Wees alstublieft zeker dat alle details correct zijn voordat u uw blockchain applicatie bevestigd."
 
 #: js/controllers/modals/masterPassphraseModalController.js:8
 msgid "Please enter the master passphrase for this node."
 msgstr "Voer alstublieft de master wachtwoordzin voor deze node in."
 
 #: partials/modals/sendTransaction.html:15
-msgid ""
-"Please enter the Recipient Address and SHIFT Amount that you would like send "
-"below."
-msgstr ""
-"Voer alstublieft het adres van de ontvanger en het aantal SHIFT dat je wil "
-"verzenden hieronder in."
+msgid "Please enter the Recipient Address and SHIFT Amount that you would like send below."
+msgstr "Voer alstublieft het adres van de ontvanger en het aantal SHIFT dat je wil verzenden hieronder in."
 
 #: partials/modals/addDappModal.html:142 partials/modals/forgingModal.html:16
 #: partials/modals/registrationDelegateModal.html:53
@@ -874,8 +815,7 @@ msgid "Search for blocks"
 msgstr "Zoeken naar blokken"
 
 #: partials/template.html:182
-msgid ""
-"Search for transactions (Transaction ID, Sender address, Recipient address)"
+msgid "Search for transactions (Transaction ID, Sender address, Recipient address)"
 msgstr "Zoeken naar transacties (transactie ID, adres zender, adres ontvanger)"
 
 #: partials/modals/secondPassphraseModal.html:70
@@ -893,8 +833,8 @@ msgstr "VERZEND"
 #: partials/modals/sendTransaction.html:119
 #: partials/modals/sendTransaction.html:49
 #: partials/modals/sendTransaction.html:84
-msgid "send lisk"
-msgstr "stuur lisk"
+msgid "send shift"
+msgstr "stuur shift"
 
 #: partials/delegates.html:120 partials/delegates.html:51
 #: partials/modals/sendTransaction.html:13 partials/modals/userInfo.html:28
@@ -987,71 +927,24 @@ msgid "Summary"
 msgstr "Samenvatting"
 
 #: partials/modals/openDappModal.html:19
-msgid ""
-"The Shift apps platform currently does not provide any protection against any "
-"unauthorized system calls made from the running application. Therefore "
-"opening any untrusted applications is not yet advisable, and could "
-"potentially lead to loss of funds."
-msgstr ""
-"Het Shift applicatie platform biedt momenteel nog geen ondersteuning tegen "
-"niet geauthorizeerde system calls van de lopende applicatie. Hierdoor "
-"adviseren wij om niet-vertrouwde applicaties niet te openen, deze kunnen "
-"leiden tot het verlies van uw balans."
+msgid "The Shift apps platform currently does not provide any protection against any unauthorized system calls made from the running application. Therefore opening any untrusted applications is not yet advisable, and could potentially lead to loss of funds."
+msgstr "Het Shift applicatie platform biedt momenteel nog geen ondersteuning tegen niet geauthorizeerde system calls van de lopende applicatie. Hierdoor adviseren wij om niet-vertrouwde applicaties niet te openen, deze kunnen leiden tot het verlies van uw balans."
 
 #: partials/modals/masterPassphraseModal.html:30
-msgid ""
-"The master passphrase is auto-generated upon first launching the Shift "
-"client. It can be found at the end of the config.json file. Therefore only "
-"node operators can install, launch or uninstall applications. Once "
-"applications are in a launched state, anyone is free to open and use them."
-msgstr ""
-"De master wachtwoordzin is automatisch gegenereerd bij het eerst opstarten van "
-"de Shift cliënt. Deze kan worden teruggevonden op het einde van het config."
-"json bestand. Hierdoor kunnen enkel node operatoren een applicatie "
-"installeren, opstaren of verijwderen. Eens dat applicaties in hun draaiende "
-"staat zijn, is iedereen vrij om deze te openen en te gebruiken."
+msgid "The master passphrase is auto-generated upon first launching the Shift client. It can be found at the end of the config.json file. Therefore only node operators can install, launch or uninstall applications. Once applications are in a launched state, anyone is free to open and use them."
+msgstr "De master wachtwoordzin is automatisch gegenereerd bij het eerst opstarten van de Shift cliënt. Deze kan worden teruggevonden op het einde van het config.json bestand. Hierdoor kunnen enkel node operatoren een applicatie installeren, opstaren of verijwderen. Eens dat applicaties in hun draaiende staat zijn, is iedereen vrij om deze te openen en te gebruiken."
 
 #: partials/modals/newUser.html:68
-msgid ""
-"The passphrase entered doesn't match with the one generated before. Please "
-"go back and generate a new one."
-msgstr ""
-"De ingevoerde wachtwoordzin komt niet overeen met diegene die eerder is "
-"gegenereerd. Ga alstublief terug en genereer een nieuwe."
+msgid "The passphrase entered doesn't match with the one generated before. Please go back and generate a new one."
+msgstr "De ingevoerde wachtwoordzin komt niet overeen met diegene die eerder is gegenereerd. Ga alstublief terug en genereer een nieuwe."
 
 #: partials/modals/secondPassphraseModal.html:72
-msgid ""
-"The second passphrase entered doesn't match with the one generated before. "
-"Please go back and generate a new one."
-msgstr ""
-"De tweede wachtwoordzin komt niet overeen met diegene die eerder is "
-"gegenereerd. Ga alstublieft terug om een nieuwe te genereren."
+msgid "The second passphrase entered doesn't match with the one generated before. Please go back and generate a new one."
+msgstr "De tweede wachtwoordzin komt niet overeen met diegene die eerder is gegenereerd. Ga alstublieft terug om een nieuwe te genereren."
 
 #: partials/modals/multisignatureModal.html:21
-msgid ""
-"This walkthrough will guide you through the necessary steps to create a "
-"multi-signature group. It's very important that you know what multi-"
-"signatures are, else you risk loosing your SHIFT balance.<br><br>A multi-"
-"signature group consists of N accounts, the one who created the group is the "
-"group owner. When the owner wants to make a transaction, M of N accounts "
-"within the group need to confirm it, otherwise the transaction will not be "
-"processed. The values M and N are specified in this walkthrough."
-"<br><br><b>Things you need to know for the multi-signature group setup:</"
-"b><br><br>• The number of group members (N).<br>• The number of needed "
-"confirmations (M).<br>• The addresses of the Shift accounts you want to add "
-"to the group."
-msgstr ""
-"Deze walkthrough zal u gidsen door de nodige stappen om een multi-signature "
-"groep aan te maken. Het is zeer belangrijk dat u weet wat multi-signatures "
-"zijn, anders loopt u kans om uw gehele SHIFT balans te verliezen. <br><br>Een "
-"multi-signature groep bestaat uit N accounts, diegene die de groep heeft "
-"aangemaakt is meteen ook beheerder van de groep. Wanneer de eigenaar een "
-"transactie wil maken, moeten M van de N accounts binnen de groep deze "
-"bevestigen, anders wordt de transactie niet uitgevoerd. The waardes M en N "
-"worden gespecifieerd doorheen deze walkthrough.<br><br><b>Dingen die u moet "
-"weten voor de multi-signature groep op te zetten:</b><br><br>• Het aantal "
-"groepsleden (N).<br>• Het aantal benodigde bevestigingen (M).<br>• De "
-"adressen van de Shift profielen die u aan de groep wil toevoegen."
+msgid "This walkthrough will guide you through the necessary steps to create a multi-signature group. It's very important that you know what multi-signatures are, else you risk loosing your SHIFT balance.<br><br>A multi-signature group consists of N accounts, the one who created the group is the group owner. When the owner wants to make a transaction, M of N accounts within the group need to confirm it, otherwise the transaction will not be processed. The values M and N are specified in this walkthrough.<br><br><b>Things you need to know for the multi-signature group setup:</b><br><br>• The number of group members (N).<br>• The number of needed confirmations (M).<br>• The addresses of the Shift accounts you want to add to the group."
+msgstr "Deze walkthrough zal u gidsen door de nodige stappen om een multi-signature groep aan te maken. Het is zeer belangrijk dat u weet wat multi-signatures zijn, anders loopt u kans om uw gehele SHIFT balans te verliezen. <br><br>Een multi-signature groep bestaat uit N accounts, diegene die de groep heeft aangemaakt is meteen ook beheerder van de groep. Wanneer de eigenaar een transactie wil maken, moeten M van de N accounts binnen de groep deze bevestigen, anders wordt de transactie niet uitgevoerd. The waardes M en N worden gespecifieerd doorheen deze walkthrough.<br><br><b>Dingen die u moet weten voor de multi-signature groep op te zetten:</b><br><br>• Het aantal groepsleden (N).<br>• Het aantal benodigde bevestigingen (M).<br>• De adressen van de Shift profielen die u aan de groep wil toevoegen."
 
 #: js/controllers/blockchainController.js:43
 #: js/controllers/forgingController.js:116
@@ -1066,8 +959,7 @@ msgstr "Tijd"
 
 #: partials/forging.html:5
 msgid "To become a delegate, click on the \"Delegate Registration\" button."
-msgstr ""
-"Om een delegate te worden, klikt u op de \"Delegate Registratie\" knop."
+msgstr "Om een delegate te worden, klikt u op de \"Delegate Registratie\" knop."
 
 #: partials/template.html:130
 msgid "Toggle navigation"
@@ -1158,12 +1050,8 @@ msgid "You can find your passphrase below."
 msgstr "U kunt uw wachtwoordzin hieronder terugvinden."
 
 #: partials/modals/vote.html:33
-msgid ""
-"You can select up to 33 delegates in one voting turn. Up to 101 delegates in "
-"total."
-msgstr ""
-"U kunt tot 33 Delegates selecteren in één stemmingsronde. In totaal kan u tot "
-"101 delegates kiezen."
+msgid "You can select up to 33 delegates in one voting turn. Up to 101 delegates in total."
+msgstr "U kunt tot 33 Delegates selecteren in één stemmingsronde. In totaal kan u tot 101 delegates kiezen."
 
 #: partials/dapps.html:165 partials/dapps.html:242
 msgid "You do not have any applications installed yet."
@@ -1218,31 +1106,14 @@ msgstr "Uw Tweede Wachtwoordzin"
 #~ msgid "add second passphrase"
 #~ msgstr "tweede wachtwoordzin toevoegen"
 
-#~ msgid ""
-#~ "Becoming a delegate requires registration. You may choose your own "
-#~ "delegate name, which can be used to promote your delegate. Only the top "
-#~ "101 delegates are eligible to forge. All fees are shared equally between "
-#~ "the top 101 delegates. Registration costs: {{fee | liskFilter}} SHIFT."
-#~ msgstr ""
-#~ "Om een delegate te worden is registratie vereist. U mag uw eigen "
-#~ "afgevaardigde naam kiezen die kan worden gebruikt om uw afgevaardigde te "
-#~ "promoten. Enkel de top 101 afgevaardigden komen in aanmerking om te "
-#~ "forgen. Alle verheffingen (fees) worden verdeeld tussen de top 101 "
-#~ "afgevaardigden. Registratie kosten: {{fee | liskFilter}} SHIFT."
+#~ msgid "Becoming a delegate requires registration. You may choose your own delegate name, which can be used to promote your delegate. Only the top 101 delegates are eligible to forge. All fees are shared equally between the top 101 delegates. Registration costs: {{fee | liskFilter}} SHIFT."
+#~ msgstr "Om een delegate te worden is registratie vereist. U mag uw eigen afgevaardigde naam kiezen die kan worden gebruikt om uw afgevaardigde te promoten. Enkel de top 101 afgevaardigden komen in aanmerking om te forgen. Alle verheffingen (fees) worden verdeeld tussen de top 101 afgevaardigden. Registratie kosten: {{fee | liskFilter}} SHIFT."
 
 #~ msgid "Dapp Store"
 #~ msgstr "Dapp Store"
 
-#~ msgid ""
-#~ "Further protect your account with an optional second passphrase! Please "
-#~ "allow some time for the changes to take effect. Service cost: <b>{{fee | "
-#~ "liskFilter}} SHIFT</b>. Your balance: <b>{{totalBalance | liskFilter}} "
-#~ "SHIFT</b>."
-#~ msgstr ""
-#~ "U kan uw account beter beveiligen met een optionele tweede wachtwoordzin! "
-#~ "Het kan even duren voordat de veranderingen zijn verwerkt. "
-#~ "Kosten van deze dienst: <b>{{fee | liskFilter}} SHIFT</b>. Uw balans: "
-#~ "<b>{{totalBalance | liskFilter}} SHIFT</b>."
+#~ msgid "Further protect your account with an optional second passphrase! Please allow some time for the changes to take effect. Service cost: <b>{{fee | liskFilter}} SHIFT</b>. Your balance: <b>{{totalBalance | liskFilter}} SHIFT</b>."
+#~ msgstr "U kan uw account beter beveiligen met een optionele tweede wachtwoordzin! Het kan even duren voordat de veranderingen zijn verwerkt. Kosten van deze dienst: <b>{{fee | liskFilter}} SHIFT</b>. Uw balans: <b>{{totalBalance | liskFilter}} SHIFT</b>."
 
 #~ msgid "GET STARTED"
 #~ msgstr "BEGINNEN"
@@ -1259,9 +1130,6 @@ msgstr "Uw Tweede Wachtwoordzin"
 #~ msgid "SHIFT Amount"
 #~ msgstr "Aantal SHIFT"
 
-#~ msgid "SHIFT Earned"
-#~ msgstr "Shift Verdiend"
-
 #~ msgid "Loading dapp"
 #~ msgstr "Dapp aan het laden"
 
@@ -1277,25 +1145,14 @@ msgstr "Uw Tweede Wachtwoordzin"
 #~ msgid "Passphrase doesn't match."
 #~ msgstr "Wachtwoordzin komt niet overeen."
 
-#~ msgid ""
-#~ "Please check your input below and go back if necessary. Double-check the "
-#~ "group members, else you risk losing your SHIFT balance!"
-#~ msgstr ""
-#~ "Controleer alstublieft onderstaande invoer en ga terug indien nodig. "
-#~ "controleer degroepsleden dubbel, anders loop je het risico "
-#~ "om je SHIFT balans te verliezen!"
-
 #~ msgid "Saving new dapp"
 #~ msgstr "Nieuwe dapp aan het opslaan"
 
+#~ msgid "SEND SHIFT"
+#~ msgstr "STUUR SHIFT"
+
 #~ msgid "Search for Dapps"
 #~ msgstr "Zoeken naar Dapps"
-
-#~ msgid "Send SHIFT"
-#~ msgstr "Verzend SHIFT"
-
-#~ msgid "SEND SHIFT"
-#~ msgstr "VERZEND SHIFT"
 
 #~ msgid "This action will cost"
 #~ msgstr "Deze actie zal kosten"
