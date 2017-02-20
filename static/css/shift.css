@@ -16,3 +16,12 @@
     border: 2px solid #1cbdc8;
     background-color: #1cbdc8;
 }
+
+/* Fix forge stats floating */
+.info-panel-grey {overflow:hidden;}
+.info-panel .title, .info-panel.info-panel-grey .title {opacity:1;font-size:1em;}
+.info-panel-grey .plain-text {width:50%;white-space:nowrap;}
+
+/* IPFS section */
+#ipfs-icon{background-image:url(/images/sprites/navicons.png);background-position:-22px 0}
+.active #ipfs-icon{background-position:-22px -22px}

@@ -8,7 +8,7 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
     $scope.searchBlocks = blockService;
     $scope.toggled = false;
     $scope.rememberedPassphrase = userService.rememberPassphrase ? userService.rememberedPassphrase : false;
-    $scope.lisk_usd = 0;
+    $scope.lisk_usd = $scope.lisk_btc = $scope.lisk_eur = 0;
     $scope.version = 'version load';
     $scope.diffVersion = 0;
     $scope.subForgingCollapsed = true;
@@ -108,9 +108,10 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
     $scope.getPriceTicker = function () {
         $http.get("https://explorer.shiftnrg.org/api/getPriceTicker")
             .then(function (response) {
-                $scope.btc_usd = response.data.btc_usd;
-                $scope.lisk_btc = response.data.lisk_btc;
-                $scope.lisk_usd = response.data.lisk_usd;
+                $scope.btc_usd = response.data.tickers.BTC.USD;
+                $scope.shift_btc = response.data.tickers.SHIFT.BTC;
+                $scope.shift_usd = response.data.tickers.SHIFT.USD;
+                $scope.shift_eur = response.data.tickers.SHIFT.EUR; 
             });
     };
 
@@ -129,8 +130,8 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
         });
     };
 
-    $scope.convertToUSD = function (shift) {
-        return (shift / 100000000) * $scope.lisk_usd;
+    $scope.convertToCUR = function (shift, cur) {
+        return (shift / 100000000) * $scope['shift_' + (cur || usd)];
     };
 
     $scope.clearSearch = function () {
