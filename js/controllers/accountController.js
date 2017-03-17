@@ -18,7 +18,7 @@ angular.module('liskApp').controller('accountController', ['$state','$scope', '$
     $scope.allVotes = 100 * 1000 * 1000 * 1000 * 1000 * 100;
 
     $scope.graphs = {
-        liskPrice: {
+        shiftPrice: {
             labels: ['1', '2'],
             series: ['Series B'],
             data: [
@@ -96,7 +96,8 @@ angular.module('liskApp').controller('accountController', ['$state','$scope', '$
 
     $scope.getCandles = function () {
         $http.get("https://explorer.shiftnrg.org/api/candles/getCandles").then(function (response) {
-            $scope.graphs.liskPrice.data = [
+			if (typeof response.data.candles == 'undefined') return false;
+            $scope.graphs.shiftPrice.data = [
                 response.data.candles.map(
                     function (candle) {
                         return candle.close;
@@ -148,6 +149,6 @@ angular.module('liskApp').controller('accountController', ['$state','$scope', '$
     });
 
     $scope.updateAppView();
-    $scope.getCandles();
+//	$scope.getCandles();
 
 }]);
