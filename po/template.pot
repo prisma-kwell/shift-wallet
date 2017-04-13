@@ -60,7 +60,7 @@ msgstr ""
 
 #: js/controllers/delegatesController.js:193
 #: js/controllers/forgingController.js:64
-#: js/controllers/votedDelegatesController.js:119
+#: js/controllers/votedDelegatesController.js:132
 #: partials/forging.html:75
 msgid "Approval"
 msgstr ""
@@ -292,7 +292,7 @@ msgstr ""
 msgid "Disable Forging"
 msgstr ""
 
-#: js/controllers/appController.js:314
+#: js/controllers/appController.js:315
 msgid "Disabled"
 msgstr ""
 
@@ -305,7 +305,7 @@ msgstr ""
 msgid "Enable Forging"
 msgstr ""
 
-#: js/controllers/appController.js:314
+#: js/controllers/appController.js:315
 msgid "Enabled"
 msgstr ""
 
@@ -480,6 +480,26 @@ msgstr ""
 msgid "Latest version"
 msgstr ""
 
+#: wallet.html:22
+msgid "Shift - Blockchain Application Platform"
+msgstr ""
+
+#: js/controllers/delegatesController.js:149
+#: js/controllers/delegatesController.js:191
+#: js/controllers/votedDelegatesController.js:130
+#: js/controllers/walletPendingsController.js:43
+#: partials/modals/multisignatureModal.html:52
+msgid "Shift Address"
+msgstr ""
+
+#: partials/account.html:33
+msgid "Shift Client"
+msgstr ""
+
+#: partials/account.html:43
+msgid "Shift Client Outdated"
+msgstr ""
+
 #: js/controllers/walletsController.js:7
 msgid "Loading Multi-Signature Groups"
 msgstr ""
@@ -611,7 +631,7 @@ msgstr ""
 
 #: js/controllers/delegatesController.js:148
 #: js/controllers/delegatesController.js:190
-#: js/controllers/votedDelegatesController.js:116
+#: js/controllers/votedDelegatesController.js:129
 msgid "Name"
 msgstr ""
 
@@ -785,7 +805,7 @@ msgstr ""
 
 #: js/controllers/delegatesController.js:189
 #: js/controllers/forgingController.js:41
-#: js/controllers/votedDelegatesController.js:115
+#: js/controllers/votedDelegatesController.js:128
 #: partials/forging.html:56
 msgid "Rank"
 msgstr ""
@@ -1101,7 +1121,7 @@ msgstr ""
 
 #: js/controllers/delegatesController.js:192
 #: js/controllers/forgingController.js:53
-#: js/controllers/votedDelegatesController.js:118
+#: js/controllers/votedDelegatesController.js:131
 msgid "Uptime"
 msgstr ""
 
