@@ -9,6 +9,17 @@ angular.module('liskApp').controller('passphraseController', ['$scope', '$rootSc
     $scope.errorMessage = "";
 	$scope.date = new Date();
 
+    $scope.cleanUpUserData = function () {
+        var userProperties = [ 'address', 'allVotes', 'balance', 'balanceToShow', 'dataToShow', 'unconfirmedBalance',
+            'unconfirmedPassphrase', 'username', 'rememberedPassphrase', 'publicKey', 'delegate'];
+        for (var i = 0; i < userProperties.length; i++) {
+            if ($rootScope[userProperties[i]] != undefined) {
+                $rootScope[userProperties[i]] = null;
+            }
+        }
+    }
+    $scope.cleanUpUserData();
+
     $scope.newUser = function () {
         $scope.newUserModal = newUser.activate({
             destroy: function () {
@@ -53,7 +64,7 @@ angular.module('liskApp').controller('passphraseController', ['$scope', '$rootSc
                 }
             });
     }
-    
+
     var passphrase = $cookies.get('passphrase');
     if (passphrase) {
         $scope.login(passphrase);

@@ -39,6 +39,23 @@ angular.module('liskApp').controller('accountController', ['$state','$scope', '$
         $scope.modal = transactionInfo.activate({block: block});
     }
 
+    $scope.resetAppData = function () {
+        $scope.balance = userService.balance = 0;
+        $scope.unconfirmedBalance = userService.unconfirmedBalance = 0;
+
+        $scope.balanceToShow = [0]
+
+        $scope.secondPassphrase = userService.secondPassphrase = 0;
+        $scope.unconfirmedPassphrase = userService.unconfirmedPassphrase = 0;
+
+        userService.multisignatures = userService.u_multisignatures = null;
+        $scope.multisignature = false;
+
+        $scope.delegateInRegistration = userService.delegateInRegistration = null;
+        $scope.delegate = userService.delegate = null;
+        $scope.username = userService.username = null;
+    }
+
     $scope.userInfo = function (userId) {
         $scope.modal = userInfo.activate({userId: userId});
     }
@@ -90,6 +107,8 @@ angular.module('liskApp').controller('accountController', ['$state','$scope', '$
                 }
                 $scope.secondPassphrase = userService.secondPassphrase;
                 $scope.unconfirmedPassphrase = userService.unconfirmedPassphrase;
+            } else {
+                $scope.resetAppData();
             }
         });
     }
@@ -103,7 +122,7 @@ angular.module('liskApp').controller('accountController', ['$state','$scope', '$
                         return candle.close;
                     }
                 )
-            ];
+            ] : [];
         });
     }
 
