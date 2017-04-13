@@ -122,7 +122,7 @@ angular.module('liskApp').controller('accountController', ['$state','$scope', '$
                         return candle.close;
                     }
                 )
-            ] : [];
+            ];
         });
     }
 
