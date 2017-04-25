@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="liskApp">
+<html>
     <head>
         <base href="/">
         <title>Shift</title>
@@ -40,8 +40,6 @@
         </script>
     </head>
     <body>
-        <div class="overflow-wrapper">
-            <div ui-view ng-class="lang.id" class="container-app"></div>
-        </div>
+        <div ui-view ng-class="lang.id" class="container-app" ng-app="liskApp"></div>
     </body>
 </html>

@@ -1,0 +1,18 @@
+<div ng-show="dapp.src !== undefined && dapp.target == 'iframe'" class="row">
+	<br/><br/>
+	<iframe id="dappFrame" style="width:100%;height:calc(100vh - 175px)" ng-src="{{dapp.src}}" frameborder="0" marginheight="0" scrolling="auto"></iframe>
+	<script type="text/javascript" src="./bower_components/iframe-resizer/js/iframeResizer.min.js"></script>
+	<script>
+		var iframeWrapper = iFrameResize({
+		  log: false, 
+		  checkOrigin: false, 
+		  tolerance: 3,
+		  minHeight: 425,
+		  heightCalculationMethod: 'lowestElement',
+		  resizeCallback:function(messageData){
+			height = parseInt(messageData.height,10);
+			console.log('height: ',height);
+		  }
+		}, document.getElementById('dappFrame')); 
+	</script>
+</div>
