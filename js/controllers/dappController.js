@@ -1,6 +1,6 @@
 require('angular');
 
-angular.module('liskApp').controller('dappController', ['$scope', 'viewFactory', '$stateParams', '$http', "$interval", "userService", "errorModal", "masterPassphraseModal", "openDappModal", "confirmDeletionModal", 'gettextCatalog', function ($scope, viewFactory, $stateParams, $http, $interval, userService, errorModal, masterPassphraseModal, openDappModal, confirmDeletionModal, gettextCatalog) {
+angular.module('liskApp').controller('dappController', ['$scope', 'viewFactory', '$stateParams', '$http', "$interval", "userService", "errorModal", "masterPassphraseModal", "openDappModal", "confirmDeletionModal", 'gettextCatalog', '$location', function ($scope, viewFactory, $stateParams, $http, $interval, userService, errorModal, masterPassphraseModal, openDappModal, confirmDeletionModal, gettextCatalog, $location) {
 
     $scope.view = viewFactory;
     $scope.view.inLoading = true;
@@ -72,6 +72,16 @@ angular.module('liskApp').controller('dappController', ['$scope', 'viewFactory',
 
     $http.get("/api/dapps/get?id=" + $stateParams.dappId).then(function (response) {
         $scope.dapp = response.data.dapp;
+		if ($scope.dapp.name == "Phantom" || $stateParams.dappId == 3459816870292034434){
+			$scope.dapp.src = "/dapps/" + $stateParams.dappId;
+			$scope.dapp.target = "_self";
+		} else if ($scope.dapp.name == "Icarus" || $stateParams.dappId == 1359665371561218894) {
+			$scope.dapp.src = "/dapps/" + $stateParams.dappId;
+			$scope.dapp.target = "iframe";
+		} else {
+			$scope.dapp.target = "_blank";
+		}
+		
         $scope.view.page = {title: $scope.dapp.name, previous: 'main.dappstore'};
         $scope.view.inLoading = false;
     });
@@ -210,16 +220,20 @@ angular.module('liskApp').controller('dappController', ['$scope', 'viewFactory',
 
     function openDapp (openDapp) {
         if (openDapp) {
-            if ($scope.dapp.type == 1) {
-                var link = angular.element('<a href="' + $scope.dapp.link + '" target="_blank"></a>');
-            } else {
-                var link = angular.element('<a href="' +
-                    '/dapps/' + $stateParams.dappId + '" target="_blank"></a>');
-            }
-            angular.element(document.body).append(link);
-            link[0].style.display = "none";
-            link[0].click();
-            link.remove();
+			if ($scope.dapp.target != "_blank"){
+				$location.path("/run/" + $stateParams.dappId);
+			} else { 	
+				if ($scope.dapp.type == 1) {
+					var link = angular.element('<a href="' + $scope.dapp.link + '" target="_blank"></a>');
+				} else {
+					var link = angular.element('<a href="' +
+						'/dapps/' + $stateParams.dappId + '" target="_blank"></a>');
+				}
+				angular.element(document.body).append(link);
+				link[0].style.display = "none";
+				link[0].click();
+				link.remove();
+			}
         }
     }
 
