@@ -4,6 +4,8 @@ angular.module('liskApp').controller('dappsController', ['$scope', 'viewFactory'
 
     $scope.view = viewFactory;
     $scope.view.inLoading = true;
+	$scope.view.isRunning = false;
+    $scope.view.groupThreshold = 12;							   
     $scope.view.loadingText = gettextCatalog.getString('Loading applications');
     $scope.view.page = {title: gettextCatalog.getString('Applications'), previous: null};
     $scope.view.bar = {showDappsBar: true, searchDapps: false, showCategories: false};
@@ -74,8 +76,7 @@ angular.module('liskApp').controller('dappsController', ['$scope', 'viewFactory'
             $http.get("/api/dapps/installed").then(function (response) {
                 $scope.installedDapps = $scope.shuffle(response.data.dapps);
                 $scope.searchedInstalledText = '';
-
-                    $scope.showPlaceholder = !response.data.success;
+                $scope.showPlaceholder = !response.data.success;
             });
 
         } else {

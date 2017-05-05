@@ -222,6 +222,7 @@ angular.module('liskApp').controller('dappController', ['$scope', 'viewFactory',
         if (openDapp) {
 			if ($scope.dapp.target != "_blank"){
 				$location.path("/run/" + $stateParams.dappId);
+				$scope.view.isRunning = true;		
 			} else { 	
 				if ($scope.dapp.type == 1) {
 					var link = angular.element('<a href="' + $scope.dapp.link + '" target="_blank"></a>');
@@ -251,6 +252,7 @@ angular.module('liskApp').controller('dappController', ['$scope', 'viewFactory',
     });
 
     $scope.$on('updateControllerData', function (event, data) {
+		$scope.view.isRunning = data.indexOf('main.dapprunner') != -1;
         if (data.indexOf('main.dapps') != -1) {
             $scope.getInstalling();
             $scope.getLaunched();

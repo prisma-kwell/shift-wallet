@@ -89,6 +89,12 @@
                     <div class="nav-icon" id="dappstore-icon"></div>
                     <span class="menu-text"><translate>Applications</translate></span>
                 </a>
+			</li>
+			<li ng-show="showMenuItem('main.dapprunner') && view.isRunning" ui-sref-active="active">
+				<a ui-sref="main.dapprunner" class="waves-effect waves-blue">
+					<div class="nav-icon" id="ipfs-icon"></div>
+					<span class="menu-text">{{view.page.title}}</span>
+				</a>	
             </li>
             <li ng-show="showMenuItem('main.forging')" ui-sref-active="active">
                 <a ui-sref="main.forging" class="waves-effect waves-blue">
