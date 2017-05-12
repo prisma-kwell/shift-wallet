@@ -11,7 +11,9 @@
 		  messageCallback: function(data){
 			var request = data.message.split(':');
 			if (request[0] == 'scope') {
-				var ctrlName = 'appController', 
+				var frameSrc = data.iframe.src, 
+					dappID = frameSrc.substring(frameSrc.lastIndexOf('/')+1,frameSrc.lenght), 
+					ctrlName = 'appController', 
 					scope = angular.element('div[ng-controller="' + ctrlName + '"]').scope();
 				if (scope && request[1] == 'secret') {
 					var response = request[1] + ':' + scope.rememberedPassphrase;
