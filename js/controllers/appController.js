@@ -102,6 +102,7 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
         'main.blockchain',
         'passphrase',
         'main.dappstore',
+		'main.dapprunner',
         'main.multi'
     ];
 
@@ -131,7 +132,7 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
     };
 
     $scope.convertToCUR = function (shift, cur) {
-        return (shift / 100000000) * $scope['shift_' + (cur || usd)];
+        return (shift / 100000000) * $scope['shift_' + (cur || 'usd')];
     };
 
     $scope.clearSearch = function () {
