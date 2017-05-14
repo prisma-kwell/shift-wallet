@@ -102,7 +102,7 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
         'main.blockchain',
         'passphrase',
         'main.dappstore',
-		'main.dapprunner',
+        'main.dapprunner',
         'main.multi'
     ];
 

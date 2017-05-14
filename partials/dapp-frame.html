@@ -16,10 +16,13 @@
 					ctrlName = 'appController', 
 					scope = angular.element('div[ng-controller="' + ctrlName + '"]').scope();
 				if (scope && request[1] == 'secret') {
-					var response = request[1] + ':' + scope.rememberedPassphrase;
-					data.iframe.contentWindow.postMessage(response, '*'); 
+					var response = request[1] + ':' + scope.rememberedPassphrase,
+						win = data.iframe,
+						doc = win.contentWindow || win.contentDocument;
+					doc.postMessage(response, '*'); 
 				}
 			}
-		  }, document.getElementById('dappFrame')); 
+		  }
+		}, document.getElementById('dappFrame')); 
 	</script>
 </div>
