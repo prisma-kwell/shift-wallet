@@ -94,36 +94,45 @@
 				<a ui-sref="main.dapprunner" class="waves-effect waves-blue">
 					<div class="nav-icon" id="ipfs-icon"></div>
 					<span class="menu-text">{{view.page.title}}</span>
+                    <i ng-click="collapseMenu('Dapprunner')" stop-event class="vertical-text right submenu-collapsing" ng-class="{'mdi-hardware-keyboard-arrow-down': subDapprunnerCollapsed, 'mdi-hardware-keyboard-arrow-up':!subDapprunnerCollapsed}"></i>
 				</a>	
+				<ul id="submenu" ng-hide="subDapprunnerCollapsed">
+					<li ng-show="showMenuItem('main.dapprunner')" ui-sref-active="active">
+						<a ui-sref="main.dapprunner" class="waves-effect waves-blue">
+							<div class="nav-icon" id="dashboard-icon"></div>
+							<span class="menu-text"><translate>Home</translate></span>
+						</a>
+					</li>
+				</ul>
             </li>
             <li ng-show="showMenuItem('main.forging')" ui-sref-active="active">
                 <a ui-sref="main.forging" class="waves-effect waves-blue">
                     <div class="nav-icon" id="forging-icon"></div>
                     <span class="menu-text"><translate>Forging</translate></span>
                     <i ng-click="collapseMenu()" stop-event class="vertical-text right submenu-collapsing" ng-class="{'mdi-hardware-keyboard-arrow-down': subForgingCollapsed, 'mdi-hardware-keyboard-arrow-up':!subForgingCollapsed}"></i>
-                </a>
+				</a>
+				<ul id="submenu" ng-hide="subForgingCollapsed">
+					<li ng-show="showMenuItem('main.delegates')" ui-sref-active="active">
+						<a ui-sref="main.delegates" class="waves-effect waves-blue">
+							<div class="nav-icon" id="delegates-icon"></div>
+							<span class="menu-text"><translate>Delegates</translate></span>
+						</a>
+					</li>
+					<li ng-show="showMenuItem('main.votes')" ui-sref-active="active">
+						<a ui-sref="main.votes" class="waves-effect waves-blue">
+							<div class="nav-icon" id="myvotes-icon"></div>
+							<span class="menu-text"><translate>My Votes</translate></span>
+						</a>
+					</li>
+				</ul>
             </li>
-            <ul id="submenu" ng-hide="subForgingCollapsed">
-                <li ng-show="showMenuItem('main.delegates')" ui-sref-active="active">
-                    <a ui-sref="main.delegates" class="waves-effect waves-blue">
-                        <div class="nav-icon" id="delegates-icon"></div>
-                        <span class="menu-text"><translate>Delegates</translate></span>
-                    </a>
-                </li>
-                <li ng-show="showMenuItem('main.votes')" ui-sref-active="active">
-                    <a ui-sref="main.votes" class="waves-effect waves-blue">
-                        <div class="nav-icon" id="myvotes-icon"></div>
-                        <span class="menu-text"><translate>My Votes</translate></span>
-                    </a>
-                </li>
-            </ul>
-        <li ng-show="showMenuItem('main.blockchain')" ui-sref-active="active">
-            <a ui-sref="main.blockchain" class="waves-effect waves-blue">
-                <div class="nav-icon" id="blockchain-icon"></div>
-                <span class="menu-text"><translate>Blockchain</translate></span>
-            </a>
-        </li>
-    </ul>
+			<li ng-show="showMenuItem('main.blockchain')" ui-sref-active="active">
+				<a ui-sref="main.blockchain" class="waves-effect waves-blue">
+					<div class="nav-icon" id="blockchain-icon"></div>
+					<span class="menu-text"><translate>Blockchain</translate></span>
+				</a>
+			</li>
+		</ul>
     <div id="inc"></div>
 </div>
 <!-- /#sidebar-wrapper -->

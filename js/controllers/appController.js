@@ -36,9 +36,12 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
 
     }
 
-    $scope.collapseMenu = function () {
-        $scope.subForgingCollapsed = !$scope.subForgingCollapsed;
-    }
+    $scope.collapseMenu = function (name) {
+		var name = name || 'Forging',
+			item = 'sub' + name + 'Collapsed';
+			
+        $scope[item] = !$scope[item];
+	}
 
     $scope.toggleMenu = function () {
         $scope.toggled = !$scope.toggled;
