@@ -1,10 +1,11 @@
 require('angular');
 
-angular.module('liskApp').controller('dappController', ['$scope', 'viewFactory', '$stateParams', '$http', "$interval", "userService", "errorModal", "masterPassphraseModal", "openDappModal", "confirmDeletionModal", 'gettextCatalog', '$location', function ($scope, viewFactory, $stateParams, $http, $interval, userService, errorModal, masterPassphraseModal, openDappModal, confirmDeletionModal, gettextCatalog, $location) {
+angular.module('liskApp').controller('dappController', ['$scope', 'viewFactory', '$stateParams', '$http', "$interval", "userService", "errorModal", "masterPassphraseModal", "openDappModal", "confirmDeletionModal", 'gettextCatalog', '$state', function ($scope, viewFactory, $stateParams, $http, $interval, userService, errorModal, masterPassphraseModal, openDappModal, confirmDeletionModal, gettextCatalog, $state) {
 
     $scope.view = viewFactory;
     $scope.view.inLoading = true;
     $scope.view.loadingText = gettextCatalog.getString('Loading applications');
+	$scope.view.isRunning = $state.current.name == 'main.dapprunner' && $stateParams.dappId > 0;
     $scope.loading = true;
     $scope.installed = false;
 
@@ -221,8 +222,7 @@ angular.module('liskApp').controller('dappController', ['$scope', 'viewFactory',
     function openDapp (openDapp) {
         if (openDapp) {
 			if ($scope.dapp.target != "_blank"){
-				$location.path("/run/" + $stateParams.dappId);
-				$scope.view.isRunning = true;		
+				$state.go('main.dapprunner', $stateParams);								 
 			} else { 	
 				if ($scope.dapp.type == 1) {
 					var link = angular.element('<a href="' + $scope.dapp.link + '" target="_blank"></a>');
@@ -249,6 +249,7 @@ angular.module('liskApp').controller('dappController', ['$scope', 'viewFactory',
 
     $scope.$on('$destroy', function () {
         $interval.cancel($scope.stateDappInterval);
+		$scope.view.isRunning = $state.current.name == 'main.dapprunner';																   
     });
 
     $scope.$on('updateControllerData', function (event, data) {
