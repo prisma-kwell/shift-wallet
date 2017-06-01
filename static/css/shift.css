@@ -25,3 +25,9 @@
 /* IPFS section */
 #ipfs-icon{background-image:url(/images/sprites/navicons.png);background-position:-22px 0}
 .active #ipfs-icon{background-position:-22px -22px}
+
+/* dApps */
+.cover-image {
+  background: #284b62; 
+  background: linear-gradient(to bottom right, #284b62, #4a7998); 
+}
