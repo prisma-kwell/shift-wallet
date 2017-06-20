@@ -156,9 +156,9 @@
         </div>
     </div>
 </div> -->
-<div class="row clearfix" ng-repeat-start="cat in dapps | groupBy: 'category'">
+<div ng-show="dapps.length > view.groupThreshold" class="row clearfix" ng-repeat-start="cat in dapps | groupBy: dapps.length > view.groupThreshold ? 'category' : 'name'">
     <div class="col-xs-12">
-        <div class="panel  panel-default no-margin-bottom" ui-sref='main.dappsCategory({categoryId:"{{getCategoryName(cat[0].category)}}"})'>
+        <div class="panel panel-default no-margin-bottom" ui-sref='main.dappsCategory({categoryId:"{{getCategoryName(cat[0].category)}}"})'>
             <div class="panel-heading cursor">
                 <h2>{{getCategoryName(cat[0].category)}} {{searchedText}}</h2>
                 <div class="more">
@@ -168,7 +168,7 @@
         </div>
     </div>
 </div>
-<div class="row clearfix">
+<div ng-class="{'row clearfix': dapps.length > view.groupThreshold}">
     <div ng-repeat="dapp in cat | limitTo: 6" class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
         <div class="dapp-content small-dapp clearfix cursor">
             <div class="cover">
@@ -215,7 +215,10 @@
         </div>
     </div>
 </div>
-<div class="row clearfix margin" ng-repeat-end></div>
+<div ng-class="{'row clearfix': dapps.length > view.groupThreshold}" ng-repeat-end></div>
+
+<div class="margin row clearfix"></div>
+
 <div class="row clearfix">
     <div class="col-xs-12">
         <div class="panel panel-default no-margin-bottom" ui-sref='main.dappsCategory({categoryId:"Installed"})' eat-click-if="!installedDapps.length">

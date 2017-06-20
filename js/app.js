@@ -10,6 +10,16 @@ require('../node_modules/angular-chart.js/dist/angular-chart.js');
 require('../node_modules/angular-socket-io/socket.js');
 require('../node_modules/ng-table/dist/ng-table.js');
 
+// We need to catch all #-clicks if the ng-app attribute isn't in <html> Angular won't trigger rootScope anymore.
+angular.element(window).on('click', function(event) {
+	var elm = angular.element(event.target);
+	if (elm.prop("tagName")!='A') elm = elm.closest('a');
+	var relHref = elm.attr('href') || elm.attr('xlink:href');
+	if (relHref == '#') {
+		event.preventDefault();
+	}
+});
+
 Mnemonic = require('bitcore-mnemonic');
 
 liskApp = angular.module('liskApp', ['ui.router', 'btford.modal', 'ngCookies', 'ngTable', 'ngAnimate',  'chart.js', 'btford.socket-io', 'ui.bootstrap', 'angular.filter', 'gettext']);
@@ -18,9 +28,13 @@ liskApp.config([
     "$locationProvider",
     "$stateProvider",
     "$urlRouterProvider",
-    function ($locationProvider, $stateProvider, $urlRouterProvider) {
+	"$controllerProvider", 
+    function ($locationProvider, $stateProvider, $urlRouterProvider, $controllerProvider) {
         $locationProvider.html5Mode(true);
         $urlRouterProvider.otherwise("/");
+
+		// Important to embed dapp controllers
+		liskApp.cp = $controllerProvider;		
 
         // Now set up the states
         $stateProvider
@@ -94,6 +108,15 @@ liskApp.config([
                 templateUrl: "/partials/blockchain.html",
                 controller: "blockchainController"
             })
+            .state('main.dapprunner', {
+                url: "/run/:dappId",
+                templateUrl: "/partials/dapp-runner.html",
+                controller: "dappController",
+				onExit: function(){
+					var iframe = document.getElementById('dappFrame');
+					if (iframe && typeof iFrameResizer != undefined) iframe.iFrameResizer.close();
+				}
+            })			
             .state('passphrase', {
                 url: "/",
                 templateUrl: "/partials/passphrase.html",
