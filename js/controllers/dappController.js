@@ -6,6 +6,8 @@ angular.module('liskApp').controller('dappController', ['$scope', 'viewFactory',
     $scope.view.inLoading = true;
     $scope.view.loadingText = gettextCatalog.getString('Loading applications');
 	$scope.view.isRunning = $state.current.name == 'main.dapprunner' && $stateParams.dappId > 0;
+	$scope.view.dapp;
+	$scope.view.menu = [];
     $scope.loading = true;
     $scope.installed = false;
 
@@ -73,16 +75,17 @@ angular.module('liskApp').controller('dappController', ['$scope', 'viewFactory',
 
     $http.get("/api/dapps/get?id=" + $stateParams.dappId).then(function (response) {
         $scope.dapp = response.data.dapp;
-		if ($scope.dapp.name == "Phantom" || $stateParams.dappId == 3459816870292034434){
+		if ($scope.dapp.name == "Phantom" || $stateParams.dappId == 9488762537877508991){
 			$scope.dapp.src = "/dapps/" + $stateParams.dappId;
 			$scope.dapp.target = "_self";
-		} else if ($scope.dapp.name == "Icarus" || $stateParams.dappId == 1359665371561218894) {
+		} else if ($scope.dapp.name == "Icarus" || $stateParams.dappId == 16847326585739172524) {
 			$scope.dapp.src = "/dapps/" + $stateParams.dappId;
 			$scope.dapp.target = "iframe";
 		} else {
 			$scope.dapp.target = "_blank";
 		}
 		
+		$scope.view.dapp = {id: $stateParams.dappId, name: $scope.dapp.name};																	   
         $scope.view.page = {title: $scope.dapp.name, previous: 'main.dappstore'};
         $scope.view.inLoading = false;
     });
@@ -222,8 +225,8 @@ angular.module('liskApp').controller('dappController', ['$scope', 'viewFactory',
     function openDapp (openDapp) {
         if (openDapp) {
 			if ($scope.dapp.target != "_blank"){
-				$state.go('main.dapprunner', $stateParams);								 
-			} else { 	
+				$state.go('main.dapprunner', $stateParams);
+			} else {
 				if ($scope.dapp.type == 1) {
 					var link = angular.element('<a href="' + $scope.dapp.link + '" target="_blank"></a>');
 				} else {
@@ -249,11 +252,10 @@ angular.module('liskApp').controller('dappController', ['$scope', 'viewFactory',
 
     $scope.$on('$destroy', function () {
         $interval.cancel($scope.stateDappInterval);
-		$scope.view.isRunning = $state.current.name == 'main.dapprunner';																   
+		$scope.view.isRunning = $state.current.name == 'main.dapprunner';
     });
 
     $scope.$on('updateControllerData', function (event, data) {
-		$scope.view.isRunning = data.indexOf('main.dapprunner') != -1;
         if (data.indexOf('main.dapps') != -1) {
             $scope.getInstalling();
             $scope.getLaunched();
