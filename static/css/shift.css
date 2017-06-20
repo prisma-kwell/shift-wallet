@@ -22,40 +22,8 @@
 .info-panel .title, .info-panel.info-panel-grey .title {opacity:1;font-size:1em;}
 .info-panel-grey .plain-text {width:50%;white-space:nowrap;}
 
-/* IPFS section */
-#ipfs-icon{background-image:url(/images/sprites/navicons.png);background-position:-22px 0}
-.active #ipfs-icon{background-position:-22px -22px}
-
 /* dApps */
 .cover-image {
   background: #284b62; 
   background: linear-gradient(to bottom right, #284b62, #4a7998); 
-}
-
-/* IPFS */
-#ipfs-status {
-  width: 36px; height: 36px;
-  background: #fff url(/images/ipfs-logo-vector-black-outline.svg) no-repeat center center;
-  background-size: 22px 22px;
-  border: 2px solid #aaa;
-  border-radius: 50%;
-}
-#ipfs-status .label { 
-  display: inline-block;
-  top: -16px; left: 16px;
-  min-width: 16px;
-  min-height: 16px;
-  color: #fff;
-  font-size: .7em;
-  padding: .4em;
-  border-radius: 50%;
-}
-#ipfs-status.active {
-  border-color: #5cb85c;
-}
-#ipfs-status.inactive {
-  border-color: #d9534f;
-}
-#ipfs-status.inactive .label {
-	display: none;
 }
