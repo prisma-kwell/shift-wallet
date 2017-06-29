@@ -122,11 +122,19 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
     $scope.getVersion = function () {
         $http.get("/api/peers/version").then(function (response) {
             if (response.data.success) {
-                $scope.version = response.data.version;
-                $http.get("https://wallet.shiftnrg.org/api/peers/version").then(function (response) {
-                    $scope.latest = response.data.version;
-                    $scope.diffVersion = compareVersion($scope.version, $scope.latest);
-                });
+				var testnet = false;
+				$http.get("/api/blocks/getStatus").then(function (response) {
+					if (response.data.success) {	
+						testnet = response.data.nethash === 'a3471dca7fb55c3507f84e999b5afd6b3698ac9adf57970a26614a54a1cb16c3';
+					}
+				}).finally(function(){
+					$scope.version = response.data.version;
+					var url = testnet ? "https://wallet.testnet.shiftnrg.org" : "https://wallet.shiftnrg.org";
+					$http.get(url + "/api/peers/version").then(function (response) {
+						$scope.latest = response.data.version;
+						$scope.diffVersion = compareVersion($scope.version, $scope.latest);
+					});
+				});
             } else {
                 $scope.diffVersion = -1;
                 $scope.version = 'version error';
