@@ -50,6 +50,6 @@
     "requests": "0.1.7",
     "socket.io": "=1.4.8",
     "buffer": "=4.9.1",
-    "lisk-js": "https://github.com/shiftnrg/lisk-js/tarball/master"
+    "shift-js": "https://github.com/shiftnrg/lisk-js/tarball/master"
   }
 }
