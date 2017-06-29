@@ -90,14 +90,14 @@
                     <span class="menu-text"><translate>Applications</translate></span>
                 </a>
 			</li>
-			<li ng-show="showMenuItem('main.dapprunner') && view.dapp.id" ui-sref-active="active">
+			<li ng-show="showMenuItem('main.dapprunner') && view.isLaunched" ui-sref-active="active">
 				<a ui-sref="main.dapprunner({dappId: view.dapp.id})" class="waves-effect waves-blue">
 					<div class="nav-icon" id="network-icon"></div>
 					<span class="menu-text">{{view.dapp.name}}</span>
 					<i ng-show="view.menu.length" ng-click="collapseMenu('Dapprunner')" stop-event class="vertical-text right submenu-collapsing" ng-class="{'mdi-hardware-keyboard-arrow-down': subDapprunnerCollapsed, 'mdi-hardware-keyboard-arrow-up':!subDapprunnerCollapsed}"></i>
 				</a>
             </li>
-			<ul id="submenu" ng-show="showMenuItem('main.dapprunner') && view.menu.length" ng-hide="subDapprunnerCollapsed" ng-show="view.dapp.id">
+			<ul id="submenu" ng-show="showMenuItem('main.dapprunner') && view.isLaunched && view.menu.length" ng-hide="subDapprunnerCollapsed" ng-show="view.dapp.id">
 				<li ng-repeat="(key, item) in view.menu">
 					<a ui-sref="main.dapprunner({dappId: view.dapp.id, '#': item.state})" class="waves-effect waves-blue">
 						<div class="nav-icon" id="{{item.icon}}"></div>

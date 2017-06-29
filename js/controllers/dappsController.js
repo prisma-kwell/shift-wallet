@@ -4,7 +4,6 @@ angular.module('liskApp').controller('dappsController', ['$scope', 'viewFactory'
 
     $scope.view = viewFactory;
     $scope.view.inLoading = true;
-	$scope.view.isRunning = false;
     $scope.view.groupThreshold = 12;							   
     $scope.view.loadingText = gettextCatalog.getString('Loading applications');
     $scope.view.page = {title: gettextCatalog.getString('Applications'), previous: null};

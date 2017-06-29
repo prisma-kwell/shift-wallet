@@ -5,7 +5,6 @@ angular.module('liskApp').controller('dappController', ['$scope', 'viewFactory',
     $scope.view = viewFactory;
     $scope.view.inLoading = true;
     $scope.view.loadingText = gettextCatalog.getString('Loading applications');
-	$scope.view.isRunning = $state.current.name == 'main.dapprunner' && $stateParams.dappId > 0;
 	$scope.view.dapp;
 	$scope.view.menu = [];
     $scope.loading = true;
@@ -252,7 +251,7 @@ angular.module('liskApp').controller('dappController', ['$scope', 'viewFactory',
 
     $scope.$on('$destroy', function () {
         $interval.cancel($scope.stateDappInterval);
-		$scope.view.isRunning = $state.current.name == 'main.dapprunner';
+		$scope.view.isLaunched = $scope.isLaunched();
     });
 
     $scope.$on('updateControllerData', function (event, data) {
@@ -260,6 +259,7 @@ angular.module('liskApp').controller('dappController', ['$scope', 'viewFactory',
             $scope.getInstalling();
             $scope.getLaunched();
             $scope.getUninstalling();
+			$scope.view.isLaunched = $scope.isLaunched();
         }
     });
 
