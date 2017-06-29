@@ -125,7 +125,7 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
 				var testnet = false;
 				$http.get("/api/blocks/getStatus").then(function (response) {
 					if (response.data.success) {	
-						testnet = response.data.nethash === 'a3471dca7fb55c3507f84e999b5afd6b3698ac9adf57970a26614a54a1cb16c3';
+						testnet = response.data.nethash === 'cba57b868c8571599ad594c6607a77cad60cf0372ecde803004d87e679117c12';
 					}
 				}).finally(function(){
 					$scope.version = response.data.version;
