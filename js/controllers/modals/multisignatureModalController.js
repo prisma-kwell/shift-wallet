@@ -56,7 +56,7 @@ angular.module('liskApp').controller('multisignatureModalController', ["$scope",
 
             }
             if (buffer.length == 32) {
-                var lisk = require('lisk-js');
+                var lisk = require('shift-js');
                 var address = lisk.crypto.getAddress($scope.member);
                 if ($scope.members[$scope.address] || address == userService.address) {
                     return;
