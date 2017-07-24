@@ -42,31 +42,34 @@ angular.module('liskApp').controller('passphraseController', ['$scope', '$rootSc
         }
         var data = { secret: pass };
         $scope.errorMessage = "";
-        $http.post("/api/accounts/open/", { secret: pass })
-            .then(function (resp) {
-                if (resp.data.success) {
-                    userService.setData(resp.data.account.address, resp.data.account.publicKey, resp.data.account.balance, resp.data.account.unconfirmedBalance, resp.data.account.effectiveBalance);
-                    userService.setForging(resp.data.account.forging);
-                    userService.setSecondPassphrase(resp.data.account.secondSignature || resp.data.account.unconfirmedSignature);
-                    userService.unconfirmedPassphrase = resp.data.account.unconfirmedSignature;
-                    if (remember) {
-                        userService.setSessionPassphrase(pass);
-                    }
+		
+		var shiftjs = require('shift-js');
+		var keypair = shiftjs.crypto.getKeys(pass);
 
-                    var goto = $cookies.get('goto');
-                    if (goto) {
-                        $state.go(goto);
-                    } else {
-                        $state.go('main.dashboard');
-                    }
-                } else {
-                    $scope.errorMessage = resp.data.error ? resp.data.error : 'Error connecting to server';
-                }
-            }, function (error) {
-                $scope.errorMessage = error.data.error ? error.data.error : error.data;
-            });
+		$http.get('/api/accounts?publicKey='+keypair.publicKey).then(function (resp) {
+			if (resp.data.success) {
+				userService.setData(resp.data.account.address, resp.data.account.publicKey, resp.data.account.balance, resp.data.account.unconfirmedBalance, resp.data.account.effectiveBalance);
+				userService.setForging(resp.data.account.forging);
+				userService.setSecondPassphrase(resp.data.account.secondSignature || resp.data.account.unconfirmedSignature);
+				userService.unconfirmedPassphrase = resp.data.account.unconfirmedSignature;
+				if (remember) {
+					userService.setSessionPassphrase(pass);
+				}
+
+				var goto = $cookies.get('goto');
+				if (goto) {
+					$state.go(goto);
+				} else {
+					$state.go('main.dashboard');
+				}
+			} else {
+				$scope.errorMessage = resp.data.error ? resp.data.error : 'Error connecting to server';
+			}
+		}, function (error) {
+			$scope.errorMessage = error.data.error ? error.data.error : error.data;
+		});
     }
-
+    
     var passphrase = $cookies.get('passphrase');
     if (passphrase) {
         $scope.login(passphrase);

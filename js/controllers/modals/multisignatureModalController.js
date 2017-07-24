@@ -121,18 +121,32 @@ angular.module('liskApp').controller('multisignatureModalController', ["$scope",
         if (!$scope.sending) {
             $scope.sending = true;
 
-            $http.put('/api/multisignatures', data).then(function (response) {
+			var shiftjs = require('shift-js');
+			var multisignature = shiftjs.signature.createMultisignature(data.secret, data.secondSecret, data.keysgroup, data.lifetime, data.min);
+			
+            $http({
+				url: '/peer/transactions',
+				method: 'POST',
+				headers: {
+					"port": window.location.port, 
+					"version": $scope.version,
+					"nethash": $scope.nethash
+				},
+				data: {
+					"transaction": multisignature
+				}
+			}).then(function (resp) {				
                 $scope.sending = false;
 
-                if (response.data.error) {
-                    Materialize.toast('Transaction error', 3000, 'red white-text');
-                    $scope.errorMessage = response.data.error;
-                } else {
+                if (resp.data.success) {
                     if ($scope.destroy) {
                         $scope.destroy(true);
                     }
                     Materialize.toast('Transaction sent', 3000, 'green white-text');
                     multisignatureModal.deactivate();
+                } else {
+                    Materialize.toast('Transaction error', 3000, 'red white-text');
+                    $scope.errorMessage = resp.data.message;
                 }
             });
         }

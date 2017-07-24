@@ -63,23 +63,33 @@ angular.module('liskApp').controller('secondPassphraseModalController', ["$scope
         if (!$scope.sending) {
             $scope.sending = true;
 
-            $http.put("/api/signatures", {
-                secret: pass,
-                secondSecret: $scope.newPassphrase,
-                publicKey: userService.publicKey
-            }).then(function (resp) {
+			var shiftjs = require('shift-js');
+			var signature = shiftjs.signature.createSignature(pass, $scope.newPassphrase);
+			
+            $http({
+				url: '/peer/transactions',
+				method: 'POST',
+				headers: {
+					"port": window.location.port, 
+					"version": $scope.version,
+					"nethash": $scope.nethash
+				},
+				data: {
+					"transaction": signature
+				}
+			}).then(function (resp) {
                 $scope.sending = false;
 
-                if (resp.data.error) {
-                    Materialize.toast('Transaction error', 3000, 'red white-text');
-                    $scope.fromServer = resp.data.error;
-                } else {
+                if (resp.data.success) {
                     if ($scope.destroy) {
                         $scope.destroy(true);
                     }
 
                     Materialize.toast('Transaction sent', 3000, 'green white-text');
                     secondPassphraseModal.deactivate();
+                } else {
+                    Materialize.toast('Transaction error', 3000, 'red white-text');
+                    $scope.fromServer = resp.data.message;
                 }
             });
         }

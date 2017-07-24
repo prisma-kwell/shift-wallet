@@ -82,19 +82,33 @@ angular.module('liskApp').controller('voteController', ["$scope", "voteModal", "
 
         if (!$scope.sending) {
             $scope.sending = true;
-
-            $http.put("/api/accounts/delegates", data).then(function (resp) {
+			
+			var shiftjs = require('shift-js');
+			var vote = shiftjs.vote.createVote(data.secret, data.delegates, data.secondSecret)
+			
+            $http({
+				url: '/peer/transactions',
+				method: 'POST',
+				headers: {
+					"port": window.location.port, 
+					"version": $scope.version,
+					"nethash": $scope.nethash
+				},
+				data: {
+					"transaction": vote
+				}
+			}).then(function (resp) {
                 $scope.sending = false;
 
-                if (resp.data.error) {
-                    Materialize.toast('Transaction error', 3000, 'red white-text');
-                    $scope.fromServer = resp.data.error;
-                } else {
+                if (resp.data.success) {
                     if ($scope.destroy) {
                         $scope.destroy();
                     }
                     Materialize.toast('Transaction sent', 3000, 'green white-text');
                     voteModal.deactivate();
+                } else {
+                    Materialize.toast('Transaction error', 3000, 'red white-text');
+                    $scope.fromServer = resp.data.message;
                 }
             });
         }
