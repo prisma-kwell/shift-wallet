@@ -227,20 +227,34 @@ angular.module('liskApp').controller('sendTransactionController', ['$scope', 'se
         if (!$scope.sending) {
             $scope.sending = true;
 
-            $http.put('/api/transactions', data).then(function (resp) {
+			var shiftjs = require('shift-js');
+			var transaction = shiftjs.transaction.createTransaction(data.recipientId, data.amount, data.secret, data.secondSecret);
+
+            $http({
+				url: '/peer/transactions',
+				method: 'POST',
+				headers: {
+					"port": $scope.port, 
+					"version": $scope.version,
+					"nethash": $scope.nethash
+				},
+				data: {
+					"transaction": transaction
+				}
+			}).then(function (resp) {
                 $scope.sending = false;
 
-                if (resp.data.error) {
-                    Materialize.toast('Transaction error', 3000, 'red white-text');
-                    $scope.errorMessage.fromServer = resp.data.error;
-                } else {
+                if (resp.data.success) {
                     if ($scope.destroy) {
                         $scope.destroy();
                     }
                     Materialize.toast('Transaction sent', 3000, 'green white-text');
                     sendTransactionModal.deactivate();
+                } else {
+                    Materialize.toast('Transaction error', 3000, 'red white-text');
+                    $scope.errorMessage.fromServer = resp.data.message;
                 }
-            });
+			});
         }
     }
 

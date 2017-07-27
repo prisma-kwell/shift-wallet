@@ -103,24 +103,37 @@ angular.module('liskApp').controller('registrationDelegateModalController', ["$s
 
         if (!$scope.sending) {
             $scope.sending = true;
+			
+			var shiftjs = require('shift-js');
+			var registration = shiftjs.delegate.createDelegate(data.secret, data.username, data.secondSecret);
+			
+            $http({
+				url: '/peer/transactions',
+				method: 'POST',
+				headers: {
+					"port": $scope.port, 
+					"version": $scope.version,
+					"nethash": $scope.nethash
+				},
+				data: {
+					"transaction": registration
+				}
+			}).then(function (resp) {
+				$scope.sending = false;
+				userService.setDelegateProcess(resp.data.success);
 
-            $http.put("/api/delegates/", data)
-                .then(function (resp) {
-                    $scope.sending = false;
-                    userService.setDelegateProcess(resp.data.success);
+				if (resp.data.success) {
+					if ($scope.destroy) {
+						$scope.destroy();
+					}
 
-                    if (resp.data.success) {
-                        if ($scope.destroy) {
-                            $scope.destroy();
-                        }
-
-                        Materialize.toast('Transaction sent', 3000, 'green white-text');
-                        registrationDelegateModal.deactivate();
-                    } else {
-                        Materialize.toast('Transaction error', 3000, 'red white-text');
-                        $scope.error = resp.data.error;
-                    }
-                });
+					Materialize.toast('Transaction sent', 3000, 'green white-text');
+					registrationDelegateModal.deactivate();
+				} else {
+					Materialize.toast('Transaction error', 3000, 'red white-text');
+					$scope.error = resp.data.message;
+				}
+			});
         }
     }
 

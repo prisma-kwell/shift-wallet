@@ -8,9 +8,12 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
     $scope.searchBlocks = blockService;
     $scope.toggled = false;
     $scope.rememberedPassphrase = userService.rememberPassphrase ? userService.rememberedPassphrase : false;
-    $scope.lisk_usd = $scope.lisk_btc = $scope.lisk_eur = 0;
+    $scope.shift_usd = $scope.shift_btc = $scope.shift_eur = 0;
     $scope.version = 'version load';
     $scope.diffVersion = 0;
+	$scope.port = window.location.port || window.location.protocol.indexOf('https') != -1 ? 443 : 80;
+	$scope.testnet = false
+	$scope.nethash = '';
     $scope.subForgingCollapsed = true;
     $scope.categories = {};
     $scope.dataToShow = {forging: false}
@@ -122,14 +125,14 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
     $scope.getVersion = function () {
         $http.get("/api/peers/version").then(function (response) {
             if (response.data.success) {
-				var testnet = false;
 				$http.get("/api/blocks/getStatus").then(function (response) {
 					if (response.data.success) {	
-						testnet = response.data.nethash === 'cba57b868c8571599ad594c6607a77cad60cf0372ecde803004d87e679117c12';
+						$scope.nethash = response.data.nethash;
+						$scope.testnet = $scope.nethash === 'cba57b868c8571599ad594c6607a77cad60cf0372ecde803004d87e679117c12';
 					}
 				}).finally(function(){
 					$scope.version = response.data.version;
-					var url = testnet ? "https://wallet.testnet.shiftnrg.org" : "https://wallet.shiftnrg.org";
+					var url = $scope.testnet ? "https://wallet.testnet.shiftnrg.org" : "https://wallet.shiftnrg.org";
 					$http.get(url + "/api/peers/version").then(function (response) {
 						$scope.latest = response.data.version;
 						$scope.diffVersion = compareVersion($scope.version, $scope.latest);
@@ -184,7 +187,6 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
                     userService.u_multisignatures = account.u_multisignatures;
                     userService.secondPassphrase = account.secondSignature || account.unconfirmedSignature;
                     userService.unconfirmedPassphrase = account.unconfirmedSignature;
-                    
                 }
 
                 $scope.balance = userService.balance;

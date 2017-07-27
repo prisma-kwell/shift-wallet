@@ -86,18 +86,40 @@ angular.module('liskApp').controller('addDappModalController', ["$scope", "$http
         if (!$scope.sending) {
             $scope.view.inLoading = $scope.sending = true;
 
-            $http.put('/api/dapps', data).then(function (response) {
+			var shiftjs = require('shift-js');
+			var registration = shiftjs.dapp.createDapp(data.secret, data.secondSecret, {
+				category: data.category,
+				name: data.name,
+				description: data.description,
+				tags: data.tags,
+				type: data.type,
+				link: data.link,
+				icon: data.icon
+			});	
+			
+            $http({
+				url: '/peer/transactions',
+				method: 'POST',
+				headers: {
+					"port": $scope.port, 
+					"version": $scope.version,
+					"nethash": $scope.nethash
+				},
+				data: {
+					"transaction": registration
+				}
+			}).then(function (resp) {	
                 $scope.view.inLoading = $scope.sending = false;
 
-                if (response.data.error) {
-                    Materialize.toast('Transaction error', 3000, 'red white-text');
-                    $scope.errorMessage = response.data.error;
-                } else {
+                if (resp.data.success) {
                     if ($scope.destroy) {
                         $scope.destroy();
                     }
                     Materialize.toast('Transaction sent', 3000, 'green white-text');
                     addDappModal.deactivate();
+                } else {
+                    Materialize.toast('Transaction error', 3000, 'red white-text');
+                    $scope.errorMessage = resp.data.message;
                 }
             });
         }
