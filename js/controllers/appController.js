@@ -11,6 +11,7 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
     $scope.shift_usd = $scope.shift_btc = $scope.shift_eur = 0;
     $scope.version = 'version load';
     $scope.diffVersion = 0;
+	$scope.port = window.location.port || window.location.protocol.indexOf('https') != -1 ? 443 : 80;
 	$scope.testnet = false
 	$scope.nethash = '';
     $scope.subForgingCollapsed = true;

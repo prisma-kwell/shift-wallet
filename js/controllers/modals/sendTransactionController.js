@@ -234,7 +234,7 @@ angular.module('liskApp').controller('sendTransactionController', ['$scope', 'se
 				url: '/peer/transactions',
 				method: 'POST',
 				headers: {
-					"port": window.location.port, 
+					"port": $scope.port, 
 					"version": $scope.version,
 					"nethash": $scope.nethash
 				},
