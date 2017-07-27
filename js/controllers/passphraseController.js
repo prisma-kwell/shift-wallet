@@ -40,14 +40,13 @@ angular.module('liskApp').controller('passphraseController', ['$scope', '$rootSc
             $scope.errorMessage = 'Passphrase must be a valid BIP39 mnemonic code.';
             return;
         }
-
         $scope.errorMessage = "";
 		
 		var shiftjs = require('shift-js');
-		var keypair = shiftjs.crypto.getKeys(pass);
+		var accountKeys = shiftjs.crypto.getKeys(pass);
 
-		$http.get('/api/accounts?publicKey='+keypair.publicKey).then(function (resp) {
-			if (resp.data.success) {
+		$http.get('/api/accounts?publicKey='+accountKeys.publicKey).then(function (resp) {
+			if (resp.data.success){
 				userService.setData(resp.data.account.address, resp.data.account.publicKey, resp.data.account.balance, resp.data.account.unconfirmedBalance, resp.data.account.effectiveBalance);
 				userService.setForging(resp.data.account.forging);
 				userService.setSecondPassphrase(resp.data.account.secondSignature || resp.data.account.unconfirmedSignature);
@@ -55,18 +54,28 @@ angular.module('liskApp').controller('passphraseController', ['$scope', '$rootSc
 				if (remember) {
 					userService.setSessionPassphrase(pass);
 				}
-
-				var goto = $cookies.get('goto');
-				if (goto) {
-					$state.go(goto);
-				} else {
-					$state.go('main.dashboard');
-				}
-			} else {
+			} else {				
 				$scope.errorMessage = resp.data.error ? resp.data.error : 'Error connecting to server';
 			}
 		}, function (error) {
 			$scope.errorMessage = error.data.error ? error.data.error : error.data;
+		}).finally(function(){
+			if ($scope.errorMessage === 'Account not found') {
+				$scope.errorMessage = '';
+				var accountAddress = shiftjs.crypto.getAddress(accountKeys.publicKey);
+				
+				userService.setData(accountAddress, accountKeys.publicKey, 0, 0, 0);
+				userService.setForging(0);
+				userService.setSecondPassphrase(0);
+				userService.unconfirmedPassphrase = 0;	
+			}
+
+			var goto = $cookies.get('goto');
+			if (goto) {
+				$state.go(goto);
+			} else {
+				$state.go('main.dashboard');
+			}			
 		});
     }
     
