@@ -40,7 +40,7 @@ angular.module('liskApp').controller('passphraseController', ['$scope', '$rootSc
             $scope.errorMessage = 'Passphrase must be a valid BIP39 mnemonic code.';
             return;
         }
-        var data = { secret: pass };
+
         $scope.errorMessage = "";
 		
 		var shiftjs = require('shift-js');
