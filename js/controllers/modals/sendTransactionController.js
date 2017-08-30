@@ -228,7 +228,8 @@ angular.module('liskApp').controller('sendTransactionController', ['$scope', 'se
             $scope.sending = true;
 
 			var shiftjs = require('shift-js');
-			var transaction = shiftjs.transaction.createTransaction(data.recipientId, data.amount, data.secret, data.secondSecret);
+			var time = (new Date()).getTime() - $scope.timegap;
+			var transaction = shiftjs.transaction.createTransaction(data.recipientId, data.amount, data.secret, data.secondSecret, time);
 
             $http({
 				url: '/peer/transactions',
