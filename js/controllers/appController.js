@@ -12,7 +12,8 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
     $scope.version = 'version load';
     $scope.diffVersion = 0;
 	$scope.port = window.location.port || window.location.protocol.indexOf('https') != -1 ? 443 : 80;
-	$scope.testnet = false
+	$scope.testnet = false;
+	$scope.timegap = 0;
 	$scope.nethash = '';
     $scope.subForgingCollapsed = true;
     $scope.categories = {};
@@ -138,6 +139,10 @@ angular.module('liskApp').controller('appController', ['dappsService', '$scope',
 						$scope.diffVersion = compareVersion($scope.version, $scope.latest);
 					});
 				});
+				
+				if (response.data.serverTime !== undefined) { 
+					$scope.timegap = (new Date()).getTime() - response.data.serverTime;
+				}
             } else {
                 $scope.diffVersion = -1;
                 $scope.version = 'version error';
