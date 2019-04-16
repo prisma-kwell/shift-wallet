@@ -4,10 +4,10 @@
   "description": "Shift user-interface submodule",
   "repository": {
     "type": "git",
-    "url": "git@github.com:ShiftNRG/shift-wallet.git"
+    "url": "git@github.com:shiftproject/shift-wallet.git"
   },
   "private": true,
-  "author": "Vera Nekrasova <vera.limita@gmail.com>, Boris Povod <boris@crypti.me>",
+  "author": "Ralf S <ralfs@shiftproject.com>, Vera Nekrasova <vera.limita@gmail.com>, Boris Povod <boris@crypti.me>",
   "license": "MIT",
   "scripts": {
     "postinstall": "bower install",
@@ -50,6 +50,6 @@
     "requests": "0.1.7",
     "socket.io": "=1.4.8",
     "buffer": "=4.9.1",
-    "shift-js": "https://github.com/ShiftNrg/shift-js/tarball/master"
+    "shift-js": "https://github.com/shiftproject/shift-js/tarball/master"
   }
 }
